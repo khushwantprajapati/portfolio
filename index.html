@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--lang for language in browser-->
+<html lang="en">
+  <head>
+    <!--tells the browser to use the utf-8 
+        character encoding when translating 
+        machine code into human-readable text 
+        and vice versa to be displayed in the browser.-->
+    <meta charset="UTF-8" />
+    <!--Setting the viewport to make your website look good on all devices:-->
+    <!--width=device-width part sets the width of the page to follow the screen-width of the device -->
+    <!--initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.-->
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+    <title>Khushwant Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- custom font from google font (font-family: 'Roboto', sans-serif;) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- custom font from google font (font-family: 'Viga', sans-serif;) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Viga&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/560f7be047.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--header element represents a container for introductory content or a set of navigational links-->
+    <header>
+      <div class="logo">
+        <img src="logo.png" alt="logo in navigation bar" />
+      </div>
+      <!--button tag defines a clickable button-->
+      <button class="nav--toggle" aria-label="menu-toggle">
+        <span class="hamburger"></span>
+      </button>
+      <!--nav tag defines a set of navigation links-->
+      <nav class="nav">
+        <!--ul tag defines an unordered (bulleted) list.-->
+        <ul class="nav--list">
+          <!--The <li> tag defines a list item-->
+          <!--<a> tag is short for anchor The <a> tag defines a hyperlink, which is used to link from one page to another.-->
+          <li class="nav--item"><a href="#Home" class="nav--link">Home</a></li>
+          <li class="nav--item">
+            <a href="#myprojects" class="nav--link">My projects</a>
+          </li>
+          <li class="nav--item">
+            <a href="#about" class="nav--link">About Me</a>
+          </li>
+          <li class="nav--item">
+            <a href="#" class="nav--link">Contact us</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Introduction -->
+    <!-- The Section HTML element represents a generic standalone section of a document -->
+    <section class="intro" id="Home">
+      <!-- h1 tag is for heading -->
+      <h1 class="section--title section--title--intro">
+        Hi, I am <strong>Khushwant Prajapati</strong>
+      </h1>
+      <!-- p tag is for paragraph-->
+      <p class="section--subtitle section--subtitle--intro">
+        &nbsp&nbsp Software Developer &nbsp&nbsp
+      </p>
+
+      <img src="pfp.png" alt="profile picture" class="intro--img" />
+    </section>
+
+    <!-- My Projects -->
+    <section class="projects" id="myprojects">
+      <h2 class="section--title section--title--projects">My Projects</h2>
+      <div class="myprojects">
+        <div class="project">
+          <h3 onclick="window.open('https://thunderous-lamington-dd2d65.netlify.app/', '_blank')">Passanger Counter</h3>
+          <iframe
+            src="https://thunderous-lamington-dd2d65.netlify.app/"
+            name="iframe1"
+            height="200"
+            width="300"
+          ></iframe>
+        </div>
+
+        <div class="project">
+          <h3>B</h3>
+          <iframe
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1"
+            height="200"
+            width="300"
+            onclick=""
+          ></iframe>
+        </div>
+        <div class="project">
+          <h3>C</h3>
+          <iframe
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1"
+            height="200"
+            width="300"
+          ></iframe>
+        </div>
+      </div>
+
+      <a href="#myprojects" class="btn">My work</a>
+    </section>
+
+    <!-- about me-->
+    <section class="about--me" id="about">
+      <h2 class="section--title section--title--about">Who I am</h2>
+      <!-- p tag is for paragraph-->
+      <p class="section--subtitle section--subtitle--about">
+        Software Developer
+      </p>
+
+      <div class="about-me--body">
+        <p>
+          A highly driven individual looking for a challenging position in an
+          organization specializing in tech which will be the impetus to my
+          professional and personal prosperity and will pay to my strengths and
+          contribute to the growth of the organization
+        </p>
+      </div>
+      <img src="" class="about-me--img" />
+    </section>
+
+    <!--footer-->
+
+    <footer class="footer">
+      <a href="mailto:khushwant5265@gmail.com" class="footer--link"
+        >Khushwant5265@gmail.com</a
+      >
+
+      <ul class="social--list">
+        <!--The <li> tag defines a list item-->
+        <!--The <a> tag defines a hyperlink, which is used to link from one page to another.-->
+        <li class="social-list--item">
+          <a
+            href="https://www.linkedin.com/in/khushwant-prajapati-657b67222/"
+            class="social--link"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

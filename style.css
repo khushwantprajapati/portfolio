@@ -1,0 +1,463 @@
+/* The asterisk (*) is known as the CSS universal selectors. It can be used to select any and all types of elements in an HTML page */
+/* The ::before and ::after pseudo-elements in CSS allows you to insert content onto a page without it needing to be in the HTML */
+*, 
+*::before,
+*::after 
+{
+    /*box-sizing property is used to adjust or control the size of any element that accepts a width or height. 
+    It specifies how to calculate the total width and height of that element.*/
+    box-sizing: border-box;
+}
+
+:root
+{
+    /* ff = font family */
+ --ff-primary: 'Viga', sans-serif;
+ --ff-secondary: 'Roboto', sans-serif;
+
+ /* fw = font family ,reg = regular*/
+ --fw-reg: 300;
+ --fw-bold: 900;
+
+ /* clr = color , bg = background */
+ --clr-light:#FFFFFF;
+ --clr-dark:#505149;
+ --clr-accent:#41B0C1;
+ --clr-2-accent:#F04854;
+
+ /* fs =  font-size ,1 rem = 16 pixels */
+ --fs-h1: 3rem;
+ --fs-h2: 2.25rem;
+ --fs-h3: 1.25rem;
+ --fs-body: 1rem;
+
+ /* bs = box shadow */
+ --bs: 0.25em 0.25em 0.75em rgba(,0,0,.25),
+       0.125em 0.125em 0.25em rgba(,0,0,.15);
+}
+/* The @media CSS at-rule is used to apply a different set of styles for different media/devices using the Media Queries. 
+A Media Query is mainly used to check the height, width, resolution, and orientation(Portrait/Landscape) of the device. 
+This CSS rule is a way out for making more out of responsive 
+design through delivering a more optimized design for specific screen type or device i.e smartphone, PC. */
+
+/* min-width means any screen with greater or equal screen size run the query */
+/* max-width means any screen with lower or equal screen size run the query */
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* end of custom property/variable */
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+/* general style*/
+body{
+    
+    background-color: var(--clr-light);
+    font-family: var(--ff-secondary);
+    margin: 0;
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section{
+    padding: 5em 2em ;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* Typography */
+
+h1,h2,h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 { 
+    font-size: var(--fs-h1)
+}
+
+h2 { 
+    font-size: var(--fs-h2)
+ }
+
+h3 { 
+    font-size: var(--fs-h3)
+}
+
+.section--subtitle{
+    
+    font-size: var(--fs-h3)
+}
+
+.section--subtitle--about,
+.section--subtitle--intro{
+    background-color: var(--clr-2-accent);
+    font-family: var(--ff-primary);
+}
+
+strong{
+    font-weight: var(--fw-bold)
+}
+
+.section--title--intro{
+font-weight: var(--fw-reg);
+}
+
+/* The Display property in CSS defines how the components(div, hyperlink, heading, etc) are going to be placed on the web page */
+/* to make intro title with strong property to start at new line and take whole width */
+.section--title--intro strong{
+    display: block;
+
+/* (block)  It starts on a new line, and takes up the whole width */
+    }
+
+/* Header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.logo{
+
+    max-width: 80px;
+}
+
+
+.nav{
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transform:  translateX(100%);
+    transition: transform 250ms  cubic-bezier(.5,0,.5,1);
+    
+    
+}
+
+.nav--list{
+list-style: none;
+display: flex;
+height: 90%;
+justify-content: space-evenly;
+flex-direction: column;
+align-items: center;
+margin: 0;
+padding: 0;
+}
+
+.nav--link{
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+    text-decoration: none;
+}
+
+.nav--link:hover{
+    color: var(--clr-2-accent);
+}
+
+.nav--toggle{
+
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 3em;
+    top: 4em;
+    z-index: 1000;
+}
+
+/* class to open nav menu on button click*/
+.nav-open .nav {
+    transform: translateX(0);
+}
+/* to keep hamburger fixed when menu is open */
+.nav-open .nav--toggle{
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before{
+    transform: rotate(90deg) translate(-6px);
+}
+
+.nav-open .hamburger::after{
+    opacity: 0;
+}
+
+.hamburger{
+
+
+    display: block;
+    position: relative;
+
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+
+    background: var(--clr-2-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+
+.hamburger::before,
+.hamburger::after{
+
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+}
+
+.hamburger::before{
+    top: 6px;
+}
+
+.hamburger::after{
+    bottom: 6px;
+}
+
+
+
+
+
+/* Introduction */
+
+.intro
+{
+    /* The position CSS property sets how an element is positioned in a document. */
+ position: relative;
+}
+
+
+
+/* min-content take less space max-content take more space https://www.youtube.com/watch?v=zvfh-aLt6OE*/
+@media (min-width: 600px) {
+    .intro{
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+        "img title"
+        "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro--img{
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section--subtitle--intro {   
+        /* grid coulumn: start/end */    
+        grid-column: 1 / -1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        
+        
+    }
+}
+
+/* my projects section */
+
+.projects{
+
+    background-color: var(--clr-dark);
+    background-image: url(back.jpg) ;
+    background-size: cover;
+    /*  background-blend-mode property defines how an element’s 
+    background-image should blend with its background-color: */
+    background-blend-mode: overlay;
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section--title--projects{
+    color: var(--clr-2-accent);
+    position: relative;
+}
+
+.section--title--projects::after{
+    content: '';
+    display: block;
+    width: 3em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.5;
+}
+
+:focus{
+    outline: 3px solid var(--clr-2-accent);
+    outline-offset: 3px;
+}
+
+.btn{
+    display: inline-block;
+    padding: .5em 2.5em;
+    background: var(--clr-2-accent);
+    color: var(--clr-light);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.project h3{
+    margin-bottom: 1em;
+}
+
+.project{
+    
+    margin-bottom: 4em;
+}
+
+@media (min-width : 800px){
+    .myprojects{
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .project + .project{
+        
+        margin-left: 2em;
+    }
+}
+
+
+/* about me section */
+
+.about--me{
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+
+
+@media (min-width: 600px){
+    .about--me{
+        display: grid;
+        width: max-content;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+        "title img"
+        "subtitle img"
+        "text img";
+        grid-column-gap: 2em;
+
+    }
+.section--title--about
+{
+    grid-area: title;
+}
+
+.section--subtitle--about{
+    grid-column: 1/-1;
+    grid-row: 2;
+    position: relative;
+    left: -1em;
+    width: calc(100% + 2em);
+    padding-left: 1em;
+    padding-right: calc(200px + 4em);
+}
+
+    .about-me--img{
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+/*  footer  */
+
+.footer{
+    background:  #111;
+    color: var(--clr-2-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+
+}
+
+.footer a{
+    color: inherit;
+    text-decoration: none;
+
+}
+
+.footer--link{
+    
+    font-weight: var(--fw-bold);
+}
+
+.footer--link:hover,
+.social-list--item:hover{
+
+    opacity: 0.8;
+
+}
+
+.footer--link:hover{
+    text-decoration: underline;
+}
+
+.social--list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list--item{
+    margin: 0 .5em;
+}
+
+.social--link{
+    padding: .5em;
+}
+
+
